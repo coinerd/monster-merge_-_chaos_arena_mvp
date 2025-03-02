@@ -1,0 +1,120 @@
+{
+  "battle": {
+    "maxParallelAttacks": 3,
+    "animationDurations": {
+      "attack": 800,
+      "damage": 1000,
+      "turnDelay": 500,
+      "battleTurnDelay": 300,
+      "battleEndDelay": 1000
+    },
+    "particleEffects": {
+      "count": 20,
+      "duration": 1000,
+      "minSize": 3,
+      "maxSize": 8,
+      "minSpeed": 2,
+      "maxSpeed": 6
+    },
+    "rewards": {
+      "baseCoins": 50,
+      "baseXP": 20,
+      "defeatCoinMultiplier": 0.25,
+      "defeatXPMultiplier": 0.5
+    }
+  },
+  "monsters": {
+    "tierMultipliers": {
+      "tier1": {
+        "health": 1.0,
+        "attack": 1.0,
+        "defense": 1.0
+      },
+      "tier2": {
+        "health": 2.0,
+        "attack": 2.0,
+        "defense": 2.0
+      },
+      "tier3": {
+        "health": 4.0,
+        "attack": 4.0,
+        "defense": 4.0
+      },
+      "tier4": {
+        "health": 8.0,
+        "attack": 8.0,
+        "defense": 8.0
+      },
+      "tier5": {
+        "health": 16.0,
+        "attack": 16.0,
+        "defense": 16.0
+      }
+    },
+    "elementMultipliers": {
+      "fire": {
+        "health": 0.8,
+        "attack": 1.3,
+        "defense": 0.9
+      },
+      "water": {
+        "health": 1.2,
+        "attack": 0.9,
+        "defense": 1.0
+      },
+      "earth": {
+        "health": 1.0,
+        "attack": 1.0,
+        "defense": 1.2
+      },
+      "air": {
+        "health": 0.9,
+        "attack": 1.2,
+        "defense": 0.8
+      }
+    },
+    "baseStats": {
+      "health": 50,
+      "attack": 10,
+      "defense": 5
+    },
+    "levelUp": {
+      "healthMultiplier": 1.2,
+      "attackMultiplier": 1.15,
+      "defenseMultiplier": 1.1,
+      "experienceMultiplier": 1.5
+    },
+    "elementEffectiveness": {
+      "strong": 1.5,
+      "weak": 0.5,
+      "normal": 1.0
+    },
+    "elementRelationships": {
+      "fire": {
+        "strong": ["air"],
+        "weak": ["water"]
+      },
+      "water": {
+        "strong": ["fire"],
+        "weak": ["earth"]
+      },
+      "earth": {
+        "strong": ["water"],
+        "weak": ["air"]
+      },
+      "air": {
+        "strong": ["earth"],
+        "weak": ["fire"]
+      }
+    },
+    "cost": 50
+  },
+  "waves": {
+    "scaling": {
+      "enemyLevelMultiplier": 0.5,
+      "enemyStatMultiplier": 0.1,
+      "enemyCountDivisor": 2
+    },
+    "maxWaves": 10
+  }
+}

@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Green Monster Level 3 -->
+  <!-- Body -->
+  <path d="M100,185 Q75,160 75,110 Q75,70 100,45 Q125,70 125,110 Q125,160 100,185 Z" fill="#388e3c"/>
+  <path d="M100,180 Q80,155 80,110 Q80,75 100,50 Q120,75 120,110 Q120,155 100,180 Z" fill="#66bb6a"/>
+  <path d="M100,175 Q85,150 85,110 Q85,80 100,55 Q115,80 115,110 Q115,150 100,175 Z" fill="#81c784"/>
+
+  <!-- Belly -->
+  <path d="M100,170 Q90,145 90,110 Q90,80 100,65 Q110,80 110,110 Q110,145 100,170 Z" fill="#fff59d"/>
+  <path d="M100,165 Q95,145 95,110 Q95,85 100,70 Q105,85 105,110 Q105,145 100,165 Z" fill="#fff176"/>
+
+  <!-- Tail -->
+  <path d="M100,185 Q85,200 75,195 Q70,190 80,185 Q85,180 95,185 Z" fill="#66bb6a"/>
+  <path d="M85,195 L75,205 L85,200 L95,205 L85,195 Z" fill="#66bb6a"/>
+
+  <!-- Horns -->
+  <path d="M85,55 Q70,30 90,35 Q95,40 85,55 Z" fill="#e53935"/>
+  <path d="M115,55 Q130,30 110,35 Q105,40 115,55 Z" fill="#e53935"/>
+  <path d="M75,60 Q55,45 70,65 Q75,70 75,60 Z" fill="#fdd835"/>
+  <path d="M125,60 Q145,45 130,65 Q125,70 125,60 Z" fill="#fdd835"/>
+  
+  <!-- Crown -->
+  <path d="M100,45 L95,35 L100,40 L105,35 L110,40 L115,35 L110,45 L100,50 L90,45 L85,35 L90,40 L95,45 Z" fill="#ffab00"/>
+
+  <!-- Gem -->
+  <path d="M100,60 L107,67 L100,74 L93,67 Z" fill="#e53935"/>
+  <path d="M100,63 L105,67 L100,71 L95,67 Z" fill="#ffeb3b"/>
+
+  <!-- Wings -->
+  <path d="M115,70 Q140,40 155,55 Q150,70 115,85 Z" fill="#9575cd"/>
+  <path d="M115,70 Q140,40 155,55" fill="none" stroke="#7e57c2" stroke-width="1"/>
+  <path d="M85,70 Q60,40 45,55 Q50,70 85,85 Z" fill="#9575cd"/>
+  <path d="M85,70 Q60,40 45,55" fill="none" stroke="#7e57c2" stroke-width="1"/>
+
+  <!-- Back spikes -->
+  <path d="M100,50 L107,35 L100,43 L93,35 L100,50 Z" fill="#4caf50"/>
+  <path d="M115,90 L130,80 L120,90 L130,100 L115,90 Z" fill="#4caf50"/>
+  <path d="M115,110 L130,100 L120,110 L130,120 L115,110 Z" fill="#4caf50"/>
+  <path d="M115,130 L130,120 L120,130 L130,140 L115,130 Z" fill="#4caf50"/>
+  <path d="M115,150 L130,140 L120,150 L130,160 L115,150 Z" fill="#4caf50"/>
+  <path d="M85,90 L70,80 L80,90 L70,100 L85,90 Z" fill="#4caf50"/>
+  <path d="M85,110 L70,100 L80,110 L70,120 L85,110 Z" fill="#4caf50"/>
+  <path d="M85,130 L70,120 L80,130 L70,140 L85,130 Z" fill="#4caf50"/>
+  <path d="M85,150 L70,140 L80,150 L70,160 L85,150 Z" fill="#4caf50"/>
+
+  <!-- Eyes -->
+  <circle cx="90" cy="70" r="12" fill="white"/>
+  <circle cx="110" cy="70" r="12" fill="white"/>
+  <circle cx="90" cy="70" r="6" fill="black"/>
+  <circle cx="110" cy="70" r="6" fill="black"/>
+  <circle cx="92" cy="68" r="2" fill="white"/>
+  <circle cx="112" cy="68" r="2" fill="white"/>
+  
+  <!-- Eyebrows -->
+  <path d="M80,60 Q90,55 100,60" fill="none" stroke="#388e3c" stroke-width="2"/>
+  <path d="M100,60 Q110,55 120,60" fill="none" stroke="#388e3c" stroke-width="2"/>
+
+  <!-- Mouth -->
+  <path d="M90,85 Q100,95 110,85" fill="#fff9c4"/>
+  <path d="M90,85 Q100,95 110,85" stroke="black" stroke-width="1" fill="none"/>
+  
+  <!-- Teeth -->
+  <path d="M95,85 L98,90 L101,85 Z" fill="white"/>
+  <path d="M101,85 L104,90 L107,85 Z" fill="white"/>
+
+  <!-- Arms -->
+  <path d="M80,100 Q60,110 65,125 Q70,135 85,120 Z" fill="#66bb6a"/>
+  <path d="M120,100 Q140,110 135,125 Q130,135 115,120 Z" fill="#66bb6a"/>
+
+  <!-- Legs -->
+  <path d="M90,175 Q75,200 85,200 Q100,200 100,180 Z" fill="#66bb6a"/>
+  <path d="M110,175 Q125,200 115,200 Q100,200 100,180 Z" fill="#66bb6a"/>
+
+  <!-- Claws -->
+  <path d="M85,200 L75,210 L85,205 L95,210 L85,200 Z" fill="#e53935"/>
+  <path d="M115,200 L125,210 L115,205 L105,210 L115,200 Z" fill="#e53935"/>
+  <path d="M65,125 L55,120 L65,125 L75,120 L65,125 Z" fill="#e53935"/>
+  <path d="M135,125 L145,120 L135,125 L125,120 L135,125 Z" fill="#e53935"/>
+
+  <!-- Extra Decorations -->
+  <path d="M100,95 Q110,100 105,110 Q100,115 95,110 Q90,100 100,95 Z" fill="#4caf50" opacity="0.5"/>
+  <path d="M100,140 Q110,145 105,155 Q100,160 95,155 Q90,145 100,140 Z" fill="#4caf50" opacity="0.5"/>
+
+  <!-- Shadow -->
+  <ellipse cx="100" cy="208" rx="35" ry="7" fill="#00000033"/>
+</svg>

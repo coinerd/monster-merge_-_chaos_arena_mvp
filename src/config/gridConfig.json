@@ -1,0 +1,11 @@
+{
+  "grid": {
+    "columns": 3,
+    "rows": 3,
+    "cellSize": 100,
+    "dragThrottleMs": 100,
+    "operationTimeoutMs": 1000,
+    "mergeAnimationDuration": 500,
+    "invalidDropAnimationDuration": 300
+  }
+}

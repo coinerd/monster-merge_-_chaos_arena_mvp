@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Green Monster Level 2 -->
+  <!-- Body -->
+  <path d="M100,180 Q80,160 80,120 Q80,80 100,60 Q120,80 120,120 Q120,160 100,180 Z" fill="#66bb6a"/>
+  <path d="M100,175 Q85,155 85,120 Q85,85 100,65 Q115,85 115,120 Q115,155 100,175 Z" fill="#81c784"/>
+
+  <!-- Belly -->
+  <path d="M100,170 Q90,150 90,120 Q90,90 100,75 Q110,90 110,120 Q110,150 100,170 Z" fill="#fff59d"/>
+  <path d="M100,165 Q95,150 95,120 Q95,90 100,80 Q105,90 105,120 Q105,150 100,165 Z" fill="#fff176"/>
+
+  <!-- Tail -->
+  <path d="M100,180 Q90,190 80,185 Q75,180 85,175 Z" fill="#66bb6a"/>
+
+  <!-- Horns -->
+  <path d="M85,60 Q75,40 90,45 Q95,50 85,60 Z" fill="#e53935"/>
+  <path d="M115,60 Q125,40 110,45 Q105,50 115,60 Z" fill="#e53935"/>
+  <path d="M75,65 Q60,55 70,70 Q75,75 75,65 Z" fill="#fdd835"/>
+  <path d="M125,65 Q140,55 130,70 Q125,75 125,65 Z" fill="#fdd835"/>
+
+  <!-- Gem -->
+  <path d="M100,65 L105,70 L100,75 L95,70 Z" fill="#e53935"/>
+
+  <!-- Wings -->
+  <path d="M115,70 Q130,50 140,60 Q135,70 115,80 Z" fill="#9575cd"/>
+  <path d="M85,70 Q70,50 60,60 Q65,70 85,80 Z" fill="#9575cd"/>
+
+  <!-- Back spikes -->
+  <path d="M100,60 L105,50 L100,55 L95,50 L100,60 Z" fill="#66bb6a"/>
+  <path d="M115,100 L125,95 L120,100 L125,105 L115,100 Z" fill="#66bb6a"/>
+  <path d="M115,120 L125,115 L120,120 L125,125 L115,120 Z" fill="#66bb6a"/>
+  <path d="M115,140 L125,135 L120,140 L125,145 L115,140 Z" fill="#66bb6a"/>
+  <path d="M85,100 L75,95 L80,100 L75,105 L85,100 Z" fill="#66bb6a"/>
+  <path d="M85,120 L75,115 L80,120 L75,125 L85,120 Z" fill="#66bb6a"/>
+  <path d="M85,140 L75,135 L80,140 L75,145 L85,140 Z" fill="#66bb6a"/>
+
+  <!-- Eyes -->
+  <circle cx="90" cy="70" r="10" fill="white"/>
+  <circle cx="110" cy="70" r="10" fill="white"/>
+  <circle cx="90" cy="70" r="5" fill="black"/>
+  <circle cx="110" cy="70" r="5" fill="black"/>
+  <circle cx="92" cy="68" r="2" fill="white"/>
+  <circle cx="112" cy="68" r="2" fill="white"/>
+
+  <!-- Mouth -->
+  <path d="M95,85 Q100,90 105,85" stroke="black" stroke-width="1" fill="none"/>
+
+  <!-- Arms -->
+  <path d="M85,100 Q70,105 75,115 Q80,120 85,110 Z" fill="#66bb6a"/>
+  <path d="M115,100 Q130,105 125,115 Q120,120 115,110 Z" fill="#66bb6a"/>
+
+  <!-- Legs -->
+  <path d="M90,170 Q80,190 85,190 Q95,190 95,175 Z" fill="#66bb6a"/>
+  <path d="M110,170 Q120,190 115,190 Q105,190 105,175 Z" fill="#66bb6a"/>
+
+  <!-- Claws -->
+  <path d="M85,190 L80,195 L85,192 L90,195 L85,190 Z" fill="#e53935"/>
+  <path d="M115,190 L120,195 L115,192 L110,195 L115,190 Z" fill="#e53935"/>
+  <path d="M75,115 L70,110 L75,112 L80,110 L75,115 Z" fill="#e53935"/>
+  <path d="M125,115 L130,110 L125,112 L120,110 L125,115 Z" fill="#e53935"/>
+
+  <!-- Shadow -->
+  <ellipse cx="100" cy="195" rx="25" ry="5" fill="#00000033"/>
+</svg>

@@ -1,0 +1,35 @@
+.monster-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 10px;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+.grid-cell {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+  transition: background-color 0.2s;
+}
+
+.grid-cell.drag-over {
+  background-color: #e0f7fa;
+}
+
+.grid-cell.invalid-drop-animation {
+  animation: invalid-drop 0.3s ease-in-out;
+}
+
+@keyframes invalid-drop {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}

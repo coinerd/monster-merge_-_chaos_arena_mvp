@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Blue Monster Level 3 -->
+  <!-- Body -->
+  <ellipse cx="100" cy="100" rx="55" ry="50" fill="#1565c0"/>
+  <ellipse cx="100" cy="100" rx="50" ry="45" fill="#42a5f5"/>
+  <ellipse cx="100" cy="100" rx="45" ry="40" fill="#64b5f6"/>
+
+  <!-- Spots -->
+  <path d="M75,90 Q80,82 85,88 Z" fill="#3949ab" opacity="0.5"/>
+  <path d="M115,120 Q122,115 118,110 Z" fill="#3949ab" opacity="0.5"/>
+  <path d="M85,125 Q92,132 95,122 Z" fill="#3949ab" opacity="0.5"/>
+  <path d="M130,95 Q135,88 128,85 Z" fill="#3949ab" opacity="0.5"/>
+  <path d="M65,105 Q70,98 75,105 Z" fill="#3949ab" opacity="0.5"/>
+  <path d="M105,75 Q110,70 115,75 Z" fill="#3949ab" opacity="0.5"/>
+
+  <!-- Fins -->
+  <path d="M50,100 Q30,75 55,90 Z" fill="#29b6f6"/>
+  <path d="M150,100 Q170,75 145,90 Z" fill="#29b6f6"/>
+
+  <!-- Top fin -->
+  <path d="M100,50 Q80,25 100,30 Q120,25 100,50 Z" fill="#29b6f6"/>
+  
+  <!-- Back spines -->
+  <path d="M100,50 L105,40 L100,45 L95,40 L100,50 Z" fill="#64b5f6"/>
+  <path d="M100,40 L105,30 L100,35 L95,30 L100,40 Z" fill="#64b5f6"/>
+
+  <!-- Horns -->
+  <path d="M70,70 Q50,45 75,60 Q80,65 70,70 Z" fill="#b39ddb"/>
+  <path d="M130,70 Q150,45 125,60 Q120,65 130,70 Z" fill="#b39ddb"/>
+  
+  <!-- Crown -->
+  <path d="M100,55 L95,45 L100,50 L105,45 L110,50 L115,45 L110,55 L100,60 L90,55 L85,45 L90,50 L95,55 Z" fill="#ffc107"/>
+
+  <!-- Eyes -->
+  <circle cx="80" cy="85" r="12" fill="white"/>
+  <circle cx="120" cy="85" r="12" fill="white"/>
+  <circle cx="80" cy="85" r="6" fill="black"/>
+  <circle cx="120" cy="85" r="6" fill="black"/>
+  <circle cx="82" cy="83" r="2" fill="white"/>
+  <circle cx="122" cy="83" r="2" fill="white"/>
+  
+  <!-- Eyebrows -->
+  <path d="M70,75 Q80,70 90,75" fill="none" stroke="#1565c0" stroke-width="2"/>
+  <path d="M110,75 Q120,70 130,75" fill="none" stroke="#1565c0" stroke-width="2"/>
+
+  <!-- Mouth -->
+  <path d="M85,115 Q100,135 115,115" fill="#f8bbd0"/>
+  <path d="M85,115 Q100,130 115,115" fill="none" stroke="black" stroke-width="1"/>
+  <path d="M90,125 L95,120 L100,125 L105,120 L110,125" fill="none" stroke="white" stroke-width="2"/>
+  
+  <!-- Teeth -->
+  <path d="M90,115 L93,120 L96,115 Z" fill="white"/>
+  <path d="M104,115 L107,120 L110,115 Z" fill="white"/>
+
+  <!-- Tail -->
+  <path d="M100,150 Q85,170 90,175 Q95,180 100,170 Q105,180 110,175 Q115,170 100,150 Z" fill="#29b6f6"/>
+  <path d="M95,175 L90,185 L95,180 L100,185 L95,175 Z" fill="#29b6f6"/>
+
+  <!-- Bubbles -->
+  <circle cx="135" cy="75" r="5" fill="#b3e5fc" opacity="0.7"/>
+  <circle cx="145" cy="65" r="3" fill="#b3e5fc" opacity="0.7"/>
+  <circle cx="150" cy="80" r="4" fill="#b3e5fc" opacity="0.7"/>
+
+  <!-- Shadow -->
+  <ellipse cx="100" cy="185" rx="45" ry="6" fill="#00000033"/>
+</svg>

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Blue Monster Level 1 -->
+  <!-- Body -->
+  <ellipse cx="100" cy="110" rx="30" ry="35" fill="#1976d2"/>
+  <path d="M70,110 Q70,90 85,75 Q100,70 115,75 Q130,90 130,110 Q130,130 115,145 Q100,150 85,145 Q70,130 70,110 Z" fill="#1976d2"/>
+  <path d="M75,110 Q75,95 88,80 Q100,75 112,80 Q125,95 125,110 Q125,125 112,140 Q100,145 88,140 Q75,125 75,110 Z" fill="#2196f3"/>
+
+  <!-- Belly -->
+  <ellipse cx="100" cy="115" rx="20" ry="25" fill="#bbdefb"/>
+
+  <!-- Tail -->
+  <path d="M85,140 Q75,150 65,145 Q60,140 70,135 Z" fill="#1976d2"/>
+
+  <!-- Back spikes -->
+  <path d="M100,75 L105,65 L100,70 L95,65 L100,75 Z" fill="#1976d2"/>
+  <path d="M115,85 L125,80 L120,85 L125,90 L115,85 Z" fill="#1976d2"/>
+  <path d="M125,100 L135,95 L130,100 L135,105 L125,100 Z" fill="#1976d2"/>
+
+  <!-- Fins -->
+  <path d="M115,100 Q140,80 145,100 Q140,110 115,110 Z" fill="#64b5f6"/>
+  <path d="M115,100 Q140,80 145,100" fill="none" stroke="#42a5f5" stroke-width="1"/>
+  <path d="M85,100 Q60,80 55,100 Q60,110 85,110 Z" fill="#64b5f6"/>
+  <path d="M85,100 Q60,80 55,100" fill="none" stroke="#42a5f5" stroke-width="1"/>
+
+  <!-- Eyes -->
+  <circle cx="90" cy="90" r="10" fill="white"/>
+  <circle cx="110" cy="90" r="10" fill="white"/>
+  <circle cx="90" cy="90" r="5" fill="black"/>
+  <circle cx="110" cy="90" r="5" fill="black"/>
+  <circle cx="92" cy="88" r="2" fill="white"/>
+  <circle cx="112" cy="88" r="2" fill="white"/>
+
+  <!-- Mouth -->
+  <path d="M95,105 Q100,110 105,105" stroke="black" stroke-width="1" fill="none"/>
+
+  <!-- Bubbles -->
+  <circle cx="120" cy="70" r="5" fill="#e3f2fd" opacity="0.7"/>
+  <circle cx="130" cy="60" r="3" fill="#e3f2fd" opacity="0.7"/>
+  <circle cx="125" cy="50" r="2" fill="#e3f2fd" opacity="0.7"/>
+
+  <!-- Legs -->
+  <path d="M85,130 Q75,145 80,145 Q85,145 85,135 Z" fill="#1976d2"/>
+  <path d="M115,130 Q125,145 120,145 Q115,145 115,135 Z" fill="#1976d2"/>
+
+  <!-- Shadow -->
+  <ellipse cx="100" cy="150" rx="30" ry="5" fill="#00000033"/>
+</svg>

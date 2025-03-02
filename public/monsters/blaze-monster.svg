@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Red Monster Level 2 -->
+  <!-- Body -->
+  <ellipse cx="100" cy="100" rx="50" ry="45" fill="#ef5350"/>
+  <ellipse cx="100" cy="100" rx="47" ry="42" fill="#e57373"/>
+
+  <!-- Spots -->
+  <path d="M75,90 Q80,82 85,88 Z" fill="#b71c1c" opacity="0.5"/>
+  <path d="M115,120 Q122,115 118,110 Z" fill="#b71c1c" opacity="0.5"/>
+  <path d="M85,125 Q92,132 95,122 Z" fill="#b71c1c" opacity="0.5"/>
+  <path d="M130,95 Q135,88 128,85 Z" fill="#b71c1c" opacity="0.5"/>
+
+  <!-- Fins -->
+  <path d="M55,100 Q40,80 60,90 Z" fill="#e53935"/>
+  <path d="M145,100 Q160,80 140,90 Z" fill="#e53935"/>
+
+  <!-- Top fin -->
+  <path d="M100,55 Q85,35 100,40 Q115,35 100,55 Z" fill="#e53935"/>
+
+  <!-- Horns -->
+  <path d="M70,75 Q55,55 75,65 Q80,70 70,75 Z" fill="#ffcdd2"/>
+  <path d="M130,75 Q145,55 125,65 Q120,70 130,75 Z" fill="#ffcdd2"/>
+
+  <!-- Eyes -->
+  <circle cx="80" cy="85" r="12" fill="white"/>
+  <circle cx="120" cy="85" r="12" fill="white"/>
+  <circle cx="80" cy="85" r="6" fill="black"/>
+  <circle cx="120" cy="85" r="6" fill="black"/>
+  <circle cx="82" cy="83" r="2" fill="white"/>
+  <circle cx="122" cy="83" r="2" fill="white"/>
+
+  <!-- Mouth -->
+  <path d="M85,115 Q100,130 115,115" fill="#f8bbd0"/>
+  <path d="M85,115 Q100,125 115,115" fill="none" stroke="black" stroke-width="1"/>
+  <path d="M90,120 L95,115 L100,120 L105,115 L110,120" fill="none" stroke="white" stroke-width="2"/>
+
+  <!-- Shadow -->
+  <ellipse cx="100" cy="150" rx="40" ry="5" fill="#00000033"/>
+</svg>
