@@ -75,7 +75,7 @@ export function useBattleController(
   
   // Process battle turns
   useEffect(() => {
-    if (shouldProcessTurn() && !processingTurnRef.current && !battleEndedRef.current) {
+    if (shouldProcessTurn && !processingTurnRef.current && !battleEndedRef.current && battleInProgress) {
       processingTurnRef.current = true;
       
       const timer = setTimeout(async () => {

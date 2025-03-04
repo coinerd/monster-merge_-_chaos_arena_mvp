@@ -1,127 +1,130 @@
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-
-interface Particle {
-  id: string;
-  x: number;
-  y: number;
-  color: string;
-  size: number;
-  angle: number;
-  speed: number;
-}
+import React, { useEffect, useRef } from 'react';
 
 interface ParticleEffectProps {
-  x: number;
-  y: number;
-  colors: string[];
-  count?: number;
+  isActive?: boolean;
   duration?: number;
-  minSize?: number;
-  maxSize?: number;
-  minSpeed?: number;
-  maxSpeed?: number;
-  isActive: boolean;
+  particleCount?: number;
+  colors?: string[];
 }
 
 /**
- * A component that creates particle effects (View)
+ * A component that displays a particle effect animation
  */
 const ParticleEffect: React.FC<ParticleEffectProps> = ({
-  x,
-  y,
-  colors,
-  count = 40,
+  isActive = false,
   duration = 1000,
-  minSize = 3,
-  maxSize = 8,
-  minSpeed = 2,
-  maxSpeed = 6,
-  isActive
+  particleCount = 30,
+  colors = ['#ffcc00', '#ff6600', '#ff3300', '#ff9900']
 }) => {
-  const [particles, setParticles] = useState<Particle[]>([]);
-
-  // Generate particles when the effect is activated
+  const containerRef = useRef<HTMLDivElement>(null);
+  const particles = useRef<HTMLDivElement[]>([]);
+  
   useEffect(() => {
-    if (!isActive) {
-      setParticles([]);
-      return;
-    }
-
-    // Generate particles
-    const newParticles: Particle[] = [];
-    for (let i = 0; i < count; i++) {
-      const angle = Math.random() * Math.PI * 2;
-      const speed = minSpeed + Math.random() * (maxSpeed - minSpeed);
-      const size = minSize + Math.random() * (maxSize - minSize);
+    if (!isActive || !containerRef.current) return;
+    
+    // Clear any existing particles
+    particles.current.forEach(particle => {
+      if (particle.parentNode) {
+        particle.parentNode.removeChild(particle);
+      }
+    });
+    particles.current = [];
+    
+    // Create new particles
+    for (let i = 0; i < particleCount; i++) {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+      
+      // Random position within container
+      const x = Math.random() * 100;
+      const y = Math.random() * 100;
+      
+      // Random size
+      const size = 3 + Math.random() * 5;
+      
+      // Random color
       const color = colors[Math.floor(Math.random() * colors.length)];
-
-      newParticles.push({
-        id: `particle-${i}-${Date.now()}`,
-        x: 0,
-        y: 0,
-        color,
-        size,
-        angle,
-        speed
-      });
+      
+      // Random animation duration
+      const animDuration = duration * (0.7 + Math.random() * 0.6);
+      
+      // Set styles
+      particle.style.cssText = `
+        position: absolute;
+        left: ${x}%;
+        top: ${y}%;
+        width: ${size}px;
+        height: ${size}px;
+        background-color: ${color};
+        border-radius: 50%;
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+        animation: particle-animation ${animDuration}ms ease-out forwards;
+      `;
+      
+      containerRef.current.appendChild(particle);
+      particles.current.push(particle);
     }
-
-    setParticles(newParticles);
-
+    
     // Clean up particles after animation
     const timer = setTimeout(() => {
-      setParticles([]);
-    }, duration);
-
-    return () => clearTimeout(timer);
-  }, [isActive, count, colors, minSize, maxSize, minSpeed, maxSpeed, duration]);
-
-  if (!isActive || particles.length === 0) {
-    return null;
-  }
-
+      particles.current.forEach(particle => {
+        if (particle.parentNode) {
+          particle.parentNode.removeChild(particle);
+        }
+      });
+      particles.current = [];
+    }, duration + 100);
+    
+    return () => {
+      clearTimeout(timer);
+      particles.current.forEach(particle => {
+        if (particle.parentNode) {
+          particle.parentNode.removeChild(particle);
+        }
+      });
+      particles.current = [];
+    };
+  }, [isActive, duration, particleCount, colors]);
+  
   return (
-    <div className="absolute pointer-events-none z-20" style={{ left: x, top: y }}>
-      {particles.map((particle) => (
-        <motion.div
-          key={particle.id}
-          initial={{ x: 0, y: 0, opacity: 1 }}
-          animate={{ 
-            x: Math.cos(particle.angle) * particle.speed * 50,
-            y: Math.sin(particle.angle) * particle.speed * 50,
-            opacity: 0,
-            scale: [1, 0.8, 0.5]
-          }}
-          transition={{ duration: duration / 1000, ease: "easeOut" }}
-          style={{ 
-            position: 'absolute',
-            width: `${particle.size}px`,
-            height: `${particle.size}px`,
-            borderRadius: '50%',
-            backgroundColor: particle.color,
-            transform: 'translate(-50%, -50%)'
-          }}
-        />
-      ))}
-      
-      {/* Add a central flash effect */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ 
-          opacity: [0, 0.8, 0],
-          scale: [0, 2, 3]
-        }}
-        transition={{ duration: 0.6 }}
-        style={{
-          position: 'absolute',
-          width: '50px',
-          height: '50px',
-          borderRadius: '50%',
-          background: `radial-gradient(circle, ${colors[0]} 0%, rgba(255,255,255,0) 70%)`,
-          transform: 'translate(-50%, -50%)'
-        }}
-      />
+    <div 
+      ref={containerRef} 
+      className="particle-container"
+      style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        pointerEvents: 'none',
+        zIndex: 10
+      }}
+    >
+      <style>
+        {`
+          @keyframes particle-animation {
+            0% {
+              opacity: 1;
+              transform: translate(-50%, -50%) scale(0);
+            }
+            50% {
+              opacity: 0.8;
+              transform: translate(
+                calc(-50% + ${Math.random() > 0.5 ? '' : '-'}${20 + Math.random() * 30}px),
+                calc(-50% + ${Math.random() > 0.5 ? '' : '-'}${20 + Math.random() * 30}px)
+              ) scale(1);
+            }
+            100% {
+              opacity: 0;
+              transform: translate(
+                calc(-50% + ${Math.random() > 0.5 ? '' : '-'}${40 + Math.random() * 60}px),
+                calc(-50% + ${Math.random() > 0.5 ? '' : '-'}${40 + Math.random() * 60}px)
+              ) scale(0.5);
+            }
+          }
+        `}
+      </style>
     </div>
   );
 };

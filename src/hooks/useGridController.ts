@@ -3,12 +3,13 @@ import { useGridStore } from '../store/useGridStore';
 import { useGameStore } from '../store/useGameStore';
 import { GridCell } from '../types';
 import { Monster } from '../models/Monster';
+import { MergeService } from '../services/MergeService';
 
 /**
  * Custom hook for controlling the monster grid with improved state management
  */
 export function useGridController(
-  onMerge: (monster1Id: string, monster2Id: string) => void,
+  onMerge: (monster1Id: string, monster2Id: string, targetCellId: string) => void,
   onAddMonster: (monsterId: string, cellId: string) => void,
   onSelectMonster: (monsterId: string) => void
 ) {
@@ -268,7 +269,12 @@ export function useGridController(
         return;
       }
       
-      const canMerge = canMergeMonsters(draggedMonsterId, targetCell.monsterId, monsters);
+      const monster1 = monsters[draggedMonsterId];
+      const monster2 = monsters[targetCell.monsterId];
+      
+      // Use MergeService directly to check if monsters can be merged
+      const canMerge = MergeService.canMerge(monster1, monster2);
+      
       console.log("Can merge:", canMerge, { 
         monster1: monsters[draggedMonsterId],
         monster2: monsters[targetCell.monsterId]
@@ -278,6 +284,9 @@ export function useGridController(
         console.log(`Merging monsters ${draggedMonsterId} and ${targetCell.monsterId}`);
         // Start merge animation
         startMergeOperation(draggedMonsterId, targetCell.monsterId, targetCellId);
+        
+        // Call onMerge with the target cell ID
+        onMerge(draggedMonsterId, targetCell.monsterId, targetCellId);
       } else {
         console.log(`Cannot merge incompatible monsters ${draggedMonsterId} and ${targetCell.monsterId}`);
         // Show invalid drop feedback
@@ -294,13 +303,13 @@ export function useGridController(
     isPointInGrid, 
     findTargetCell, 
     findCellById, 
-    canMergeMonsters, 
     setDraggedMonster, 
     setIsDragging, 
     setGridHighlight, 
     startMergeOperation, 
     showInvalidDropFeedback, 
-    onAddMonster
+    onAddMonster,
+    onMerge
   ]);
   
   /**
@@ -320,14 +329,19 @@ export function useGridController(
         } 
         // If cell has a monster, check if it can be merged with the dragged monster
         else if (targetCell.monsterId !== draggedMonsterId) {
-          const canMerge = canMergeMonsters(draggedMonsterId, targetCell.monsterId, monsters);
-          if (canMerge) {
-            highlightCell(cellId);
+          const monster1 = monsters[draggedMonsterId];
+          const monster2 = monsters[targetCell.monsterId];
+          
+          if (monster1 && monster2) {
+            const canMerge = MergeService.canMerge(monster1, monster2);
+            if (canMerge) {
+              highlightCell(cellId);
+            }
           }
         }
       }
     }
-  }, [isDragging, draggedMonsterId, findCellById, highlightCell, canMergeMonsters, monsters]);
+  }, [isDragging, draggedMonsterId, findCellById, highlightCell, monsters]);
   
   /**
    * Handles drag enter event
@@ -344,14 +358,19 @@ export function useGridController(
         } 
         // If cell has a monster, check if it can be merged with the dragged monster
         else if (targetCell.monsterId !== draggedMonsterId) {
-          const canMerge = canMergeMonsters(draggedMonsterId, targetCell.monsterId, monsters);
-          if (canMerge) {
-            highlightCell(cellId);
+          const monster1 = monsters[draggedMonsterId];
+          const monster2 = monsters[targetCell.monsterId];
+          
+          if (monster1 && monster2) {
+            const canMerge = MergeService.canMerge(monster1, monster2);
+            if (canMerge) {
+              highlightCell(cellId);
+            }
           }
         }
       }
     }
-  }, [isDragging, draggedMonsterId, findCellById, highlightCell, canMergeMonsters, monsters]);
+  }, [isDragging, draggedMonsterId, findCellById, highlightCell, monsters]);
   
   /**
    * Handles drag leave event
@@ -433,21 +452,6 @@ export function useGridController(
       // Hide the monsters being merged
       hideMonsters([mergingMonsters.monster1Id, mergingMonsters.monster2Id]);
       
-      // Call onMerge to create the new monster
-      console.log("Calling onMerge with monster IDs:", mergingMonsters.monster1Id, mergingMonsters.monster2Id);
-      
-      try {
-        // First check if the monsters still exist and can be merged
-        if (canMergeMonsters(mergingMonsters.monster1Id, mergingMonsters.monster2Id, monsters)) {
-          // Perform the merge
-          onMerge(mergingMonsters.monster1Id, mergingMonsters.monster2Id);
-        } else {
-          console.warn("Monsters can no longer be merged, canceling merge operation");
-        }
-      } catch (error) {
-        console.error("Error during merge operation:", error);
-      }
-      
       // Keep particle effect active for a bit longer
       const animationDuration = 800;
       const timer = setTimeout(() => {
@@ -465,9 +469,7 @@ export function useGridController(
     monsters, 
     completeMergeOperation, 
     createMergeEffectForCell, 
-    hideMonsters, 
-    canMergeMonsters, 
-    onMerge
+    hideMonsters
   ]);
   
   /**
